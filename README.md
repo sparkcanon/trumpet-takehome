@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Trumpet - A simple widget app take home test
 
 ## Development
 
@@ -8,13 +8,16 @@ pnpm dev
 
 ## Build and run
 
-```bash
-pnpm build
-```
+- Build the app
 
-```bash
-pnpm preview
-```
+  ```bash
+  pnpm build
+  ```
+
+- Run the app
+  ```bash
+  pnpm preview
+  ```
 
 ## Test
 
@@ -36,8 +39,10 @@ Run the docker image with:
 docker run -p 3000:3000 trumpet
 ```
 
-## Improvement
+## Improvement ideas
 
 - Investigate re-rendering issues
 - Add accessibility features
-- Handle errors better
+- Error handling
+- Better debouncing
+- Avoid direct calls to the DB
