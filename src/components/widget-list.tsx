@@ -21,27 +21,34 @@ export function WidgetList() {
     );
 
   return (
-    <div className="flex flex-col gap-4 w-md mx-auto">
-      {widgets?.map((widget) => (
-        <Card key={widget.id}>
-          <CardHeader>
-            <CardTitle>Widget #{widget.id}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <WidgetTextarea widget={widget} />
-          </CardContent>
-          <CardFooter>
-            <Button
-              variant="outline"
-              onClick={() => {
-                db.textWidgets.delete(widget.id);
-              }}
-            >
-              Delete
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
+    <>
+      <ul className="flex flex-col gap-4 w-md mx-auto">
+        {widgets?.map((widget) => (
+          <li key={widget.id}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Widget #{widget.id}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <WidgetTextarea widget={widget} />
+              </CardContent>
+              <CardFooter>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    db.textWidgets.delete(widget.id);
+                  }}
+                >
+                  Delete
+                </Button>
+              </CardFooter>
+            </Card>
+          </li>
+        ))}
+      </ul>
+      <span className="sr-only" aria-live="polite" role="status">
+        {widgets.length} widgets found
+      </span>
+    </>
   );
 }

@@ -6,16 +6,20 @@
 pnpm dev
 ```
 
-## Build
+## Build and run
 
 ```bash
 pnpm build
 ```
 
-## Preview
-
 ```bash
 pnpm preview
+```
+
+## Test
+
+```bash
+pnpm test:ui
 ```
 
 ## Docker
@@ -31,3 +35,9 @@ Run the docker image with:
 ```bash
 docker run -p 3000:3000 trumpet
 ```
+
+## Improvement
+
+- Investigate re-rendering issues
+- Add accessibility features
+- Handle errors better

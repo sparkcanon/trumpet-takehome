@@ -22,10 +22,14 @@ export function WidgetTextarea({ widget }: { widget: TextWidget }) {
         }}
         maxLength={1000}
         className="resize-none"
+        aria-label="Widget text area"
       />
       <p className="text-sm text-muted-foreground text-right">
         {content.length} / 1000
       </p>
+      <span className="sr-only" aria-live="polite" role="status">
+        {content.length} characters
+      </span>
     </div>
   );
 }
