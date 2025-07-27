@@ -7,8 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { WidgetTextarea } from "./widget-textarea";
 
 export function WidgetList() {
   const widgets = useLiveQuery(() => db.textWidgets.toArray(), []);
@@ -28,12 +28,7 @@ export function WidgetList() {
             <CardTitle>Widget #{widget.id}</CardTitle>
           </CardHeader>
           <CardContent>
-            <Textarea
-              value={widget.content}
-              onChange={(e) => {
-                db.textWidgets.update(widget.id, { content: e.target.value });
-              }}
-            />
+            <WidgetTextarea widget={widget} />
           </CardContent>
           <CardFooter>
             <Button
