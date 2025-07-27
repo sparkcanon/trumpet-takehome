@@ -15,8 +15,11 @@ export function WidgetList() {
 
   if (!widgets?.length)
     return (
-      <div className="text-center text-sm text-muted-foreground h-full flex items-center justify-center">
-        No widgets found. Add one above.
+      <div className="text-center text-sm text-muted-foreground h-full flex items-center justify-center gap-2">
+        <span>No widgets found. Add one above.</span>
+        <span className="sr-only" aria-live="polite" role="status">
+          No widgets found. Add one above.
+        </span>
       </div>
     );
 

@@ -22,6 +22,7 @@ export function WidgetTextarea({ widget }: { widget: TextWidget }) {
         }}
         maxLength={1000}
         className="resize-none"
+        autoFocus={true}
         aria-label="Widget text area"
       />
       <p className="text-sm text-muted-foreground text-right">
